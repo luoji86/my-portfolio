@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="罗一言的个人作品集网站，面向 AI 产品实习生 / AI 应用开发。" />
+    <title>罗一言｜AI 作品集</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+    <script defer src="sound.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="scoreboard mono" aria-hidden="true">SCORE <span>00000</span></div>
+    <div class="arcade-cursor" aria-hidden="true"></div>
+    <button class="back-to-top mono" aria-label="回到顶部" hidden>↑ TOP</button>
+    <button class="sound-toggle mono" id="soundToggle" aria-label="音效开关">♪ OFF</button>
+
+    <header class="topbar">
+      <div class="topbar__inner container">
+        <a class="brand" href="#hero" aria-label="返回顶部">
+          <span class="brand__badge">LY</span>
+          <span class="brand__text">罗一言</span>
+        </a>
+
+        <nav class="nav" aria-label="页面导航">
+          <a href="#projects">作品</a>
+          <a href="#experience">经历</a>
+          <a href="#skills">技能</a>
+          <a href="#about">关于</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>AI 简历优化网站 ◆ 手势实验室 ◆ 岗位匹配打分 ◆ ATS 关键词分析 ◆ MediaPipe 手势识别 ◆ Vibe Coding ◆ Cursor 精修 ◆ GitHub Pages ◆&nbsp;</span>
+        <span>AI 简历优化网站 ◆ 手势实验室 ◆ 岗位匹配打分 ◆ ATS 关键词分析 ◆ MediaPipe 手势识别 ◆ Vibe Coding ◆ Cursor 精修 ◆ GitHub Pages ◆&nbsp;</span>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="hero section" id="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy reveal">
+            <p class="eyebrow mono">PLAYER 01 · AI 产品实习生 / AI 应用开发</p>
+            <div class="hero-title-clip">
+              <h1>罗一言</h1>
+            </div>
+            <p class="hero__lead">用 AI 把想法做成可以玩的东西</p>
+            <p class="hero__subcopy">
+              大一 · 电气自动化专业 · 擅长把想法快速落地成可演示、可使用、可传播的作品。
+            </p>
+
+            <div class="sticker-row" aria-label="关键词标签">
+              <span class="sticker sticker--pink">AI 应用开发</span>
+              <span class="sticker sticker--mint">简历优化</span>
+              <span class="sticker sticker--purple">手势交互</span>
+            </div>
+
+            <a class="scroll-hint mono" href="#projects">
+              <span>向下滚动</span>
+              <span class="scroll-hint__icon" aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="hero__panel reveal" aria-hidden="true">
+            <div class="hero-card">
+              <p class="hero-card__label mono">FOCUS</p>
+              <p class="hero-card__title">AI × 产品 × 交互</p>
+              <div class="hero-card__tags">
+                <span>快速原型</span>
+                <span>动手能力</span>
+                <span>结果导向</span>
+              </div>
+              <p class="hero-card__start mono">PRESS START ▸</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--projects" id="projects">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow mono">01 / PROJECTS</p>
+            <h2>作品集</h2>
+            <p>从 AI 应用到交互原型，我更关注“能不能跑起来”和“能不能让人愿意玩”。</p>
+          </div>
+
+          <div class="project-grid" id="projectGrid">
+            <article class="card project-card reveal">
+              <div class="project-card__image placeholder placeholder--pink">AI 简历优化网站</div>
+              <div class="project-card__body">
+                <div class="project-card__topline mono">2026.3 - 至今</div>
+                <h3>AI 简历优化网站</h3>
+                <p>全栈开发 · 简历解析 / 岗位匹配打分 / ATS 关键词分析 · 已部署上线。</p>
+                <div class="tag-list">
+                  <span>Vue3</span>
+                  <span>FastAPI</span>
+                  <span>SQLite</span>
+                  <span>大模型 API</span>
+                </div>
+                <a class="card-link" href="#" target="_blank" rel="noreferrer">▶ PLAY</a>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-card__image placeholder placeholder--mint">Gesture Lab</div>
+              <div class="project-card__body">
+                <div class="project-card__topline mono">纯前端</div>
+                <h3>手势实验室 Gesture Lab</h3>
+                <p>基于 MediaPipe 的摄像头手势识别，支持石头剪刀布、挥手翻页、手势开关灯三种玩法。</p>
+                <div class="tag-list">
+                  <span>MediaPipe</span>
+                  <span>Camera</span>
+                  <span>Gesture</span>
+                </div>
+                <a class="card-link" href="#" target="_blank" rel="noreferrer">▶ PLAY</a>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-card__image placeholder placeholder--purple">Portfolio Site</div>
+              <div class="project-card__body">
+                <div class="project-card__topline mono">本网站</div>
+                <h3>个人作品集网站</h3>
+                <p>Vibe Coding 初版 + Cursor 精修，主打街头游戏机 / 复古贴纸风的干净高级表达。</p>
+                <div class="tag-list">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                </div>
+                <a class="card-link" href="#hero">▶ PLAY THIS SITE</a>
+              </div>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-card__image placeholder placeholder--yellow">3 个可玩项目</div>
+              <div class="project-card__body">
+                <div class="project-card__topline mono">Trae 原型</div>
+                <h3>AI 辅助开发交互原型</h3>
+                <p>用 Trae 从 0 搭建 3 个可玩项目：飞机大战、手势切水果、手势粒子云。</p>
+                <div class="tag-list">
+                  <span>Prompt</span>
+                  <span>Prototype</span>
+                  <span>Interaction</span>
+                </div>
+                <div class="game-links">
+                  <a class="card-link" href="games/plane.html" target="_blank" rel="noreferrer">✈ 飞机大战</a>
+                  <a class="card-link" href="games/fruit.html" target="_blank" rel="noreferrer">🍉 切水果</a>
+                  <a class="card-link" href="games/supernova.html" target="_blank" rel="noreferrer">✨ 粒子云</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--experience" id="experience">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow mono">02 / RESEARCH</p>
+            <h2>实践与研究</h2>
+          </div>
+
+          <article class="experience-card card reveal">
+            <div class="experience-card__header">
+              <div>
+                <h3>AI 自动化剪辑</h3>
+                <p class="mono">研究方向 · 开发中</p>
+              </div>
+              <div class="sticker sticker--orange">方法论 × AI</div>
+            </div>
+            <ul class="achievement-list">
+              <li>系统拆解研究前 3 秒强钩子、情绪卡点等爆款剪辑手法，沉淀可复用方法论</li>
+              <li>目标：结合大模型实现「素材 → AI 识别剪辑点 → 输出剪辑方案」的自动化工具</li>
+              <li>已具备大模型 API、Prompt 工程与全栈开发能力，MVP 开发中</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--skills" id="skills">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow mono">03 / SKILLS</p>
+            <h2>技能</h2>
+          </div>
+
+          <div class="skill-grid">
+            <article class="skill-card card reveal">
+              <p class="skill-card__label mono">开发</p>
+              <p>Python、Vue3、FastAPI、Git</p>
+            </article>
+            <article class="skill-card card reveal">
+              <p class="skill-card__label mono">AI 与大模型</p>
+              <p>大模型 API、Prompt 工程、Agent 搭建</p>
+            </article>
+            <article class="skill-card card reveal">
+              <p class="skill-card__label mono">创作</p>
+              <p>短视频剪辑、WPS、数据分析</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--certs" id="certs">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow mono">04 / CERTS</p>
+            <h2>证书</h2>
+          </div>
+
+          <div class="cert-card card reveal">
+            <span class="cert-pill sticker sticker--green">阿里达摩院</span>
+            <div>
+              <h3>人工智能初级 / 高级证书</h3>
+              <p>持续补充 AI 基础与应用能力，保持对模型、产品与落地场景的理解。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--about" id="about">
+        <div class="container about-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow mono">05 / ABOUT</p>
+            <h2>关于我</h2>
+          </div>
+          <div class="about-card card reveal">
+            <p>
+              我是罗一言，电气自动化专业大一学生，喜欢把 AI 能力和交互体验结合起来，做成能看、能用、也能传播的作品。
+            </p>
+            <p>曾任辩论队队长，带队晋级两轮；也做过学生会纪律委员，习惯在协作中把事情落地。</p>
+            <p><strong>求职意向：</strong>AI 产品实习生 / AI 应用开发</p>
+          </div>
+
+          <div class="code-card reveal" aria-label="个人风格配置">
+            <div class="code-card__bar mono">
+              <span class="code-card__dots"><i></i><i></i><i></i></span>
+              <span>liyiyan.style.json</span>
+            </div>
+            <pre class="code-card__body"><code>{<span class="ck">"style"</span>: <span class="cs">"Neon Kinetic Typographic"</span>,
+  <span class="ck">"subject"</span>: <span class="cs">"罗一言"</span>,
+  <span class="ck">"role"</span>: <span class="cs">"AI 应用开发 / 产品方向"</span>,
+  <span class="ck">"props"</span>: [<span class="cs">"简历优化"</span>, <span class="cs">"手势识别"</span>, <span class="cs">"AI 剪辑"</span>],
+  <span class="ck">"main_text"</span>: <span class="cs">"用 AI 把想法做成可以玩的东西"</span>,
+  <span class="ck">"bg"</span>: <span class="cs">"#0d0817"</span>,
+  <span class="ck">"accent"</span>: [<span class="cs">"#ff2d78"</span>, <span class="cs">"#ffe600"</span>]}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a href="https://github.com/Cleaner-cyber/resume_2" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:your-email@example.com">邮箱</a>
+      </div>
+    </footer>
+  </body>
+</html>
