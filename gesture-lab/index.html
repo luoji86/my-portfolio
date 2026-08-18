@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#060a14" />
+<title>手势实验室 Gesture Lab</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">✋</span>
+      <div>
+        <div class="brand-name">手势实验室 <span class="brand-en">GESTURE LAB</span></div>
+        <div class="brand-sub">摄像头手势识别 · 打开即玩 · 无需安装</div>
+      </div>
+    </div>
+    <div class="status-pill" id="statusPill">等待启动</div>
+  </header>
+
+  <main class="page">
+    <!-- 摄像头区 -->
+    <section class="camera-card">
+      <div class="cam-wrap">
+        <video id="video" playsinline autoplay muted></video>
+        <canvas id="overlay"></canvas>
+        <div class="cam-hint" id="camHint">点击下方按钮开启摄像头</div>
+      </div>
+      <div class="cam-actions">
+        <button class="primary-btn" id="startBtn">🎥 开启摄像头</button>
+        <button class="ghost-btn" id="stopBtn" disabled>停止</button>
+      </div>
+      <p class="cam-note">提示：摄像头画面只在本地处理，不会上传。需在 https 或 localhost 环境下运行（本地测试请用本地服务器，不能直接双击打开）。</p>
+    </section>
+
+    <!-- 模式切换 -->
+    <nav class="mode-tabs">
+      <button class="mode-tab active" data-mode="rps">🥌 石头剪刀布</button>
+      <button class="mode-tab" data-mode="flip">📖 翻页器</button>
+      <button class="mode-tab" data-mode="light">💡 智能开关</button>
+    </nav>
+
+    <!-- 石头剪刀布 -->
+    <section class="mode-panel" id="panel-rps">
+      <div class="panel-head">
+        <h2>石头剪刀布 VS AI</h2>
+        <p>在镜头前出拳：握拳=石头，食指中指=剪刀，五指张开=布。AI 实时应战！</p>
+      </div>
+      <div class="rps-stage">
+        <div class="rps-side">
+          <div class="rps-label">你的手势</div>
+          <div class="rps-emoji" id="yourEmoji">✋</div>
+          <div class="rps-name" id="yourName">等待出拳…</div>
+        </div>
+        <div class="rps-vs">VS</div>
+        <div class="rps-side">
+          <div class="rps-label">AI 出拳</div>
+          <div class="rps-emoji" id="aiEmoji">❔</div>
+          <div class="rps-name" id="aiName">—</div>
+        </div>
+      </div>
+      <div class="rps-result" id="rpsResult"></div>
+      <div class="rps-score">
+        <span>你 <b id="scoreYou">0</b></span>
+        <span class="rps-score-dot">:</span>
+        <span><b id="scoreAi">0</b> AI</span>
+        <button class="mini-btn" id="rpsReset">重置比分</button>
+      </div>
+    </section>
+
+    <!-- 翻页器 -->
+    <section class="mode-panel hidden" id="panel-flip">
+      <div class="panel-head">
+        <h2>手势翻页器</h2>
+        <p>举起手向左快速挥 = 上一页，向右挥 = 下一页。可以当 PPT 遥控器用！</p>
+      </div>
+      <div class="flip-stage">
+        <button class="flip-arrow" id="flipLeft">◀</button>
+        <div class="flip-page">
+          <div class="flip-num" id="flipNum">1</div>
+          <div class="flip-total">/ 20 页</div>
+        </div>
+        <button class="flip-arrow" id="flipRight">▶</button>
+      </div>
+      <div class="flip-tip" id="flipTip">挥手试试（左右各一次）</div>
+      <button class="mini-btn" id="flipReset">回到第 1 页</button>
+    </section>
+
+    <!-- 智能开关 -->
+    <section class="mode-panel hidden" id="panel-light">
+      <div class="panel-head">
+        <h2>手势开关灯</h2>
+        <p>在镜头前五指张开 = 开灯，握拳 = 关灯（保持约 0.6 秒生效）。智能家居面板演示。</p>
+      </div>
+      <div class="light-stage">
+        <div class="light-bulb" id="lightBulb">💡</div>
+        <div class="light-state" id="lightState">灯：关</div>
+        <div class="light-guide" id="lightGuide">举起手：张开 / 握拳</div>
+      </div>
+      <div class="light-panel">
+        <span class="light-switch off" id="lightSwitch"></span>
+        <span class="light-panel-label">SMART PANEL / CH-01</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>手势实验室 Gesture Lab · MediaPipe Hands · 纯前端 · 本地处理</span>
+  </footer>
+
+  <!-- MediaPipe（全部走 jsdelivr CDN，模型文件打包在 npm 包里，无需外网额外下载） -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
